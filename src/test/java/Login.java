@@ -1,10 +1,20 @@
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.io.FileHandler;
 
-public class Login {
+import java.io.File;
+import java.io.IOException;
+
+public class Login extends Setup{
     @Test (priority = 1)
-    void LoginPage()
+    void LoginPage() throws InterruptedException
     {
+        WebDriver driver = getDriver();
 //        System.out.println("Navigate to Login Page");
+        Assert.assertEquals(driver.getCurrentUrl(), "https://www.ubereats.com/");
+        Thread.sleep(5000);
     }
 
     @Test (priority = 2)
