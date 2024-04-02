@@ -3,7 +3,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.io.FileHandler;
 import org.testng.annotations.Test;
 
@@ -12,6 +11,7 @@ import java.io.IOException;
 
 public class Setup {
     public WebDriver driver;
+    public String LoginCode = "";
     public String screenshotPath = "C:\\Users\\jorda\\Desktop\\";
     @BeforeSuite
     void OpenBrowser()
@@ -36,11 +36,11 @@ public class Setup {
         Assert.assertEquals(driver.getTitle(), "Order Food Online | Food Delivery App | Uber Eats");
     }
 
-    @AfterSuite
-    void CloseBrowser()
-    {
-        driver.quit();
-    }
+//    @AfterSuite
+//    void CloseBrowser()
+//    {
+//        driver.quit();
+//    }
 
     public WebDriver getDriver() // from: https://stackoverflow.com/questions/42331659/how-to-pass-selenium-webdriver-instance-to-another-class
     {
