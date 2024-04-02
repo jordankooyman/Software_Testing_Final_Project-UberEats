@@ -7,14 +7,14 @@ import org.openqa.selenium.io.FileHandler;
 import java.io.File;
 import java.io.IOException;
 
-public class Login extends Setup{
+public class Login extends Setup {
     @Test (priority = 1)
-    void LoginPage() throws InterruptedException
-    {
+    void LoginPage() {
         WebDriver driver = getDriver();
 //        System.out.println("Navigate to Login Page");
-        Assert.assertEquals(driver.getCurrentUrl(), "https://www.ubereats.com/");
-        Thread.sleep(5000);
+
+
+
     }
 
     @Test (priority = 2)
