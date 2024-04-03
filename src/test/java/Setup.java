@@ -11,8 +11,7 @@ import java.io.IOException;
 
 public class Setup {
     public WebDriver driver;
-    public String LoginCode = "";
-    public String screenshotPath = "C:\\Users\\jorda\\Desktop\\";
+//    public String screenshotPath = "C:\\Users\\jorda\\Desktop\\";
     @BeforeSuite
     void OpenBrowser()
     {
@@ -40,15 +39,15 @@ public class Setup {
         driver.quit();
     }
 
-    public WebDriver getDriver() // from: https://stackoverflow.com/questions/42331659/how-to-pass-selenium-webdriver-instance-to-another-class
-    {
-        if (driver == null){ //This null designation causes a problem on the CheckTitle method: java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.getTitle()" because "this.driver" is null
-            driver = new ChromeDriver();
-            return driver;
-        }else{
-            return driver;
-        }
-    }
+//    public WebDriver getDriver() // from: https://stackoverflow.com/questions/42331659/how-to-pass-selenium-webdriver-instance-to-another-class
+//    {
+//        if (driver == null){ //This null designation causes a problem on the CheckTitle method: java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.getTitle()" because "this.driver" is null
+//            driver = new ChromeDriver();
+//            return driver;
+//        }else{
+//            return driver;
+//        }
+//    }
 
 //    public void TakeScreenshot(String filepath) throws IOException
 //    {

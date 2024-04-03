@@ -1,2 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"><suite name="All Test Suite"><test verbose="2" preserve-order="true" name="C:/Users/Jacob/IdeaProjects/Software_Testing_Final_Project-UberEats/src/test/java"><classes/></test></suite>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/Jacob/IdeaProjects/Software_Testing_Final_Project-UberEats/src/test/java">
+        <classes>
+            <class name="Setup">
+                <methods>
+                    <include name="CheckTitle"/>
+                </methods>
+            </class>
+            <class name="DeliveryAddress">
+                <methods>
+                    <include name="TestAddressDialog"/>
+                    <include name="SetDeliveryAddress"/>
+                    <include name="ChangeDeliveryAddress"/>
+                </methods>
+            </class>
+            <class name="SearchFilters">
+                <methods>
+                    <include name="SelectOneCuisine"/>
+                    <include name="DeselectOneCuisine"/>
+                    <include name="SelectThreeCuisine"/>
+                    <include name="DeselectThreeCuisine"/>
+                    <include name="SelectUnder30"/>
+                    <include name="DeselectUnder30"/>
+                    <include name="SelectVegan"/>
+                    <include name="DeselectVegan"/>
+                    <include name="SelectRatingSort"/>
+                    <include name="DeselectRatingSort"/>
+                    <include name="CombineFilters"/>
+                </methods>
+            </class>
+            <class name="NearbyPickup">
+                <methods>
+                    <include name="switchToPickup"/>
+                    <include name="zoomIn"/>
+                    <include name="selectRestaurant"/>
+                    <include name="zoomOut"/>
+                    <include name="exitPickup"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
