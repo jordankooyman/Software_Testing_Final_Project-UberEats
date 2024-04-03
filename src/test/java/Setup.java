@@ -28,8 +28,8 @@ public class Setup {
 //        TakeScreenshot(screenshotPath+"Homepage.png");
 //    }
 
-    @Test (priority = 2)
-    void EnterAddress() throws InterruptedException {
+    @Test (priority = 1)
+    void CheckTitle() throws InterruptedException {
         Thread.sleep(2000);
         Assert.assertEquals(driver.getTitle(), "Order Food Online | Food Delivery App | Uber Eats");
     }
@@ -42,7 +42,7 @@ public class Setup {
 
     public WebDriver getDriver() // from: https://stackoverflow.com/questions/42331659/how-to-pass-selenium-webdriver-instance-to-another-class
     {
-        if (driver == null){
+        if (driver == null){ //This null designation causes a problem on the CheckTitle method: java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.getTitle()" because "this.driver" is null
             driver = new ChromeDriver();
             return driver;
         }else{
