@@ -1,37 +1,50 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class DeliveryAddress extends Setup {
     @Test
-    void TestAddressDialog()
-    {
+    void TestAddressDialog() {
         openAddressDialog();
+        WebElement dialogBox = null;
 
-        // Assertion
+        try {
+            dialogBox = driver.findElement(By.xpath("//*[@id=\"wrapper\"]/div[3]/div/div/div[2]"));
+            Assert.assertNotNull(dialogBox);
+        } catch (NoSuchElementException e)
+        {
+            Assert.fail();
+        }
 
         closeAddressDialog();
 
-        // Assertion
+        dialogBox = null;
+        try {
+            dialogBox = driver.findElement(By.xpath("//*[@id=\"wrapper\"]/div[3]/div/div/div[2]"));
+            Assert.fail();
+        } catch (NoSuchElementException e)
+        {
+            Assert.assertNull(dialogBox);
+        }
     }
 
     @Test
-    void SetDeliveryAddress()
-    {
+    void SetDeliveryAddress() {
         setAddress("Biscayne Hall");
 
-        Assert.assertEquals(checkAddress(), "Biscayne Hall");
+        Assert.assertEquals(checkAddress(), "Biscayne Hall"); // Update
     }
 
     @Test
-    void ChangeDeliveryAddress()
-    {
+    void ChangeDeliveryAddress() {
         setAddress("Osprey Hall");
 
-        Assert.assertEquals(checkAddress(), "Osprey Hall");
+        Assert.assertEquals(checkAddress(), "Osprey Hall"); // Update
     }
 
-    void setAddress(String Address)
-    {
+    void setAddress(String Address) {
         openAddressDialog();
 
         // Do something
@@ -48,13 +61,26 @@ public class DeliveryAddress extends Setup {
         return Address;
     }
 
-    void openAddressDialog()
-    {
+    void openAddressDialog() {
+        driver.findElement(By.partialLinkText("Florida Gulf Coast Uni")).click();
 
+        // Wait for the dialog box to open
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     void closeAddressDialog()
     {
+        driver.findElement(By.xpath("//*[@id=\"wrapper\"]/div[3]/div/div/div[2]/div[2]/button")).click();
 
+        // Wait for the dialog box to close
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
