@@ -44,7 +44,7 @@ public class Meals extends Setup{
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/div[2]/main/div[5]/div/div[2]/div[1]/div[2]/div/div/nav/div[2]/button")).click(); //Navigates to custom items
         Thread.sleep(2000);
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/div[2]/main/div[5]/div/div[3]/div/ul/li[2]/div/ul/li[1]/a/div/div[2]/div/button")).click(); //selects custom bowl
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         driver.findElement(By.id("quick_view-item-2a5005c4-e44d-5918-a05a-06b4669357e4-1-742f32d2-5332-53c8-b038-f529dfc31cb5+0")).click(); //Selects sofritas
         Thread.sleep(3000);
         driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div/div/div/div/div/div[1]/button")).click(); //Backs out of portion size to confirm normal portion
