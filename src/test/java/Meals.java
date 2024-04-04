@@ -49,5 +49,6 @@ public class Meals extends Setup{
         Thread.sleep(3000);
         driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div/div/div/div/div/div[1]/button")).click();
         Thread.sleep(2000);
+
     }
 }
