@@ -93,7 +93,7 @@ public class SearchFilters extends Setup {
     }
     void SelectOneCuisine(String Filter)
     {
-        toggleFilterT(Filter);
+        clickPartialLinkText(Filter);
 
 
         boolean Page;
@@ -113,67 +113,67 @@ public class SearchFilters extends Setup {
 
     void DeselectOneCuisine(String Filter)
     {
-        toggleFilterT(Filter);
+        clickPartialLinkText(Filter);
         wait(500);
     }
 
 
     void SelectUnder30()
     {
-        toggleFilterX("//*[@id=\"main-content\"]/div/div[2]/div/button[3]");
+        clickXPath("//*[@id=\"main-content\"]/div/div[2]/div/button[3]");
         wait(500);
     }
 
 
     void DeselectUnder30()
     {
-        toggleFilterX("//*[@id=\"main-content\"]/div/div[2]/div/button[3]");
+        clickXPath("//*[@id=\"main-content\"]/div/div[2]/div/button[3]");
         wait(500);
     }
 
     void SelectVegan()
     {
-        toggleFilterX("//*[@id=\"main-content\"]/div/div[2]/div/button[7]"); // Dietary
-        toggleFilterX("//*[@id=\"bui4\"]/div/section/div/div[2]/div[1]/ul/button[2]"); // Vegan
-        toggleFilterX("//*[@id=\"bui4\"]/div/section/div/div[2]/div[2]/button[2]"); // Apply
+        clickXPath("//*[@id=\"main-content\"]/div/div[2]/div/button[7]"); // Dietary
+        clickXPath("//*[@id=\"bui4\"]/div/section/div/div[2]/div[1]/ul/button[2]"); // Vegan
+        clickXPath("//*[@id=\"bui4\"]/div/section/div/div[2]/div[2]/button[2]"); // Apply
         wait(500);
     }
 
     void DeselectVegan()
     {
-        toggleFilterX("//*[@id=\"main-content\"]/div/div[2]/div/button[7]"); // Dietary
-        toggleFilterX("//*[@id=\"bui4\"]/div/section/div/div[2]/div[2]/button[1]"); // Reset
+        clickXPath("//*[@id=\"main-content\"]/div/div[2]/div/button[7]"); // Dietary
+        clickXPath("//*[@id=\"bui4\"]/div/section/div/div[2]/div[2]/button[1]"); // Reset
         wait(500);
     }
 
     void SelectRatingSort()
     {
-        toggleFilterX("//*[@id=\"main-content\"]/div/div[2]/div/button[8]"); // Sort
-        toggleFilterX("//*[@id=\"bui5\"]/div/section/div/div[2]/div[1]/ul/button[2]"); // Rating
-        toggleFilterX("//*[@id=\"bui5\"]/div/section/div/div[2]/div[2]/button[2]"); // Apply
+        clickXPath("//*[@id=\"main-content\"]/div/div[2]/div/button[8]"); // Sort
+        clickXPath("//*[@id=\"bui5\"]/div/section/div/div[2]/div[1]/ul/button[2]"); // Rating
+        clickXPath("//*[@id=\"bui5\"]/div/section/div/div[2]/div[2]/button[2]"); // Apply
         wait(500);
     }
 
     void SelectDeliverySort()
     {
-        toggleFilterX("//*[@id=\"main-content\"]/div/div[2]/div/button[8]"); // Sort
-        toggleFilterX("//*[@id=\"bui5\"]/div/section/div/div[2]/div[1]/ul/button[3]"); // Delivery Time
-        toggleFilterX("//*[@id=\"bui5\"]/div/section/div/div[2]/div[2]/button[2]"); // Apply
+        clickXPath("//*[@id=\"main-content\"]/div/div[2]/div/button[8]"); // Sort
+        clickXPath("//*[@id=\"bui5\"]/div/section/div/div[2]/div[1]/ul/button[3]"); // Delivery Time
+        clickXPath("//*[@id=\"bui5\"]/div/section/div/div[2]/div[2]/button[2]"); // Apply
         wait(500);
     }
 
     void DeselectSort()
     {
-        toggleFilterX("//*[@id=\"main-content\"]/div/div[2]/div/button[8]"); // Sort
-        toggleFilterX("//*[@id=\"bui5\"]/div/section/div/div[2]/div[2]/button[1]"); // Reset
+        clickXPath("//*[@id=\"main-content\"]/div/div[2]/div/button[8]"); // Sort
+        clickXPath("//*[@id=\"bui5\"]/div/section/div/div[2]/div[2]/button[1]"); // Reset
         wait(500);
     }
 
     void SelectRecommenedSort()
     {
-        toggleFilterX("//*[@id=\"main-content\"]/div/div[2]/div/button[8]"); // Sort
-        toggleFilterX("//*[@id=\"bui5\"]/div/section/div/div[2]/div[1]/ul/button[1]"); // Recommended (default)
-        toggleFilterX("//*[@id=\"bui5\"]/div/section/div/div[2]/div[2]/button[2]"); // Apply
+        clickXPath("//*[@id=\"main-content\"]/div/div[2]/div/button[8]"); // Sort
+        clickXPath("//*[@id=\"bui5\"]/div/section/div/div[2]/div[1]/ul/button[1]"); // Recommended (default)
+        clickXPath("//*[@id=\"bui5\"]/div/section/div/div[2]/div[2]/button[2]"); // Apply
         wait(500);
     }
 

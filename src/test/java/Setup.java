@@ -1,8 +1,6 @@
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.openqa.selenium.io.FileHandler;
 import org.testng.annotations.Test;
@@ -53,13 +51,13 @@ public class Setup {
         }
     }
 
-    void toggleFilterT(String Text)
+    void clickPartialLinkText(String Text)
     {
         driver.findElement(By.partialLinkText(Text)).click();
         wait(1000);
     }
 
-    void toggleFilterX(String XPath)
+    void clickXPath(String XPath)
     {
         driver.findElement(By.xpath(XPath)).click();
         wait(1000);
