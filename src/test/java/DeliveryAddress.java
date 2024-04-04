@@ -1,12 +1,17 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class DeliveryAddress extends Setup {
-    @Test
+    @Test (priority = 1)
     void TestAddressDialog() {
+//        wait(500);
+        Assert.assertTrue(checkAddress().contains("Florida Gulf Coast University"));
+//        Assert.assertEquals(checkAddress(),"Florida Gulf Coast University");
+
         openAddressDialog();
         WebElement dialogBox = null;
 
@@ -28,28 +33,39 @@ public class DeliveryAddress extends Setup {
         {
             Assert.assertNull(dialogBox);
         }
+
+        Assert.assertTrue(checkAddress().contains("Florida Gulf Coast University"));
     }
 
-    @Test
+    @Test (priority = 2)
     void SetDeliveryAddress() {
-        setAddress("Biscayne Hall");
+        setAddress("Biscayne");
 
-        Assert.assertEquals(checkAddress(), "Biscayne Hall"); // Update
+        Assert.assertTrue(checkAddress().contains("Biscayne Hall"));
     }
 
-    @Test
+    @Test (priority = 3)
     void ChangeDeliveryAddress() {
-        setAddress("Osprey Hall");
+        setAddress("Osprey");
 
-        Assert.assertEquals(checkAddress(), "Osprey Hall"); // Update
+        Assert.assertTrue(checkAddress().contains("Osprey Hall"));
     }
 
-    void setAddress(String Address) {
+    void setAddress(String newAddress) {
         openAddressDialog();
 
-        // Do something
+        driver.findElement(By.partialLinkText("hange")).click(); // Look for "Change" or "click.change" button text
 
-        closeAddressDialog();
+        // Wait for the dialog box to update
+        wait(250);
+
+        driver.findElement(By.id("location-typeahead-location-manager-input")).sendKeys(newAddress);
+        wait(1000); // Wait for search to complete
+        driver.findElement(By.id("location-typeahead-location-manager-input")).sendKeys(Keys.ARROW_DOWN);
+        driver.findElement(By.id("location-typeahead-location-manager-input")).sendKeys(Keys.ENTER); // Closes Dialog as well
+        wait(1000);
+
+        // closeAddressDialog();
     }
 
     String checkAddress()
@@ -57,19 +73,17 @@ public class DeliveryAddress extends Setup {
         String Address = "";
 
         // Find address
+        Address = driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/div[2]/header/div/div/div/div/div/div[2]/div[1]/div[2]/a")).getText();
 
         return Address;
     }
 
     void openAddressDialog() {
-        driver.findElement(By.partialLinkText("Florida Gulf Coast Uni")).click();
+        //driver.findElement(By.partialLinkText(curAddress).click();
+        driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/div[2]/header/div/div/div/div/div/div[2]/div[1]/div[2]/a")).click();
 
         // Wait for the dialog box to open
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        wait(1000);
     }
 
     void closeAddressDialog()
@@ -77,10 +91,6 @@ public class DeliveryAddress extends Setup {
         driver.findElement(By.xpath("//*[@id=\"wrapper\"]/div[3]/div/div/div[2]/div[2]/button")).click();
 
         // Wait for the dialog box to close
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        wait(1100);
     }
 }
