@@ -38,11 +38,11 @@ public class Setup {
         Assert.assertEquals(driver.getTitle(), "Order Food Online | Food Delivery App | Uber Eats", "Initial Address not Loaded");
     }
 
-    @AfterSuite
-    void CloseBrowser()
-    {
-        driver.quit();
-    }
+//    @AfterSuite
+//    void CloseBrowser()
+//    {
+//        driver.quit();
+//    }
 
     void wait(int time) // Sleep function with error handling built in
     {

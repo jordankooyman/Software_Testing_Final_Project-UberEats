@@ -34,6 +34,14 @@
                     <include name="exitPickup"/>
                 </methods>
             </class>
+            <class name="Meals">
+                <methods>
+                    <include name="RestaurantSelection"/>
+                    <include name="StandardMealSection"/>
+                    <include name="OrderStandardMeal"/>
+                    <include name="OrderCustomMeal"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
