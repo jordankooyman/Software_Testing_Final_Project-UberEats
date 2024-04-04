@@ -18,16 +18,10 @@
             </class>
             <class name="SearchFilters">
                 <methods>
-                    <include name="SelectOneCuisine"/>
-                    <include name="DeselectOneCuisine"/>
-                    <include name="SelectThreeCuisine"/>
-                    <include name="DeselectThreeCuisine"/>
-                    <include name="SelectUnder30"/>
-                    <include name="DeselectUnder30"/>
-                    <include name="SelectVegan"/>
-                    <include name="DeselectVegan"/>
-                    <include name="SelectRatingSort"/>
-                    <include name="DeselectRatingSort"/>
+                    <include name="testOneCuisine"/>
+                    <include name="testUnder30"/>
+                    <include name="testVegan"/>
+                    <include name="testSorting"/>
                     <include name="CombineFilters"/>
                 </methods>
             </class>

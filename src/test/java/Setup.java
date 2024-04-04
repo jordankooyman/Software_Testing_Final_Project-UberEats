@@ -12,7 +12,7 @@ import java.io.IOException;
 
 public class Setup {
     public WebDriver driver;
-//    public String screenshotPath = "C:\\Users\\jorda\\Desktop\\";
+    public String screenshotPath = "C:\\Users\\jorda\\Desktop\\";
     @BeforeSuite
     void OpenBrowser()
     {
@@ -27,17 +27,11 @@ public class Setup {
         addressBox.sendKeys("\u00A0"); // Non-breaking space (ASCII code 160)
         wait(100);
         addressBox.sendKeys("Florida Gulf Coast University");
-        wait(1000); // Wait for search to load
+        wait(2000); // Wait for search to load
         addressBox.sendKeys(Keys.ARROW_DOWN); // Select first entry in combobox shown
         addressBox.sendKeys(Keys.ENTER);
         wait(5000); // Let new webpage load
     }
-
-//    @Test (priority = 1)
-//    void CheckWebsite() throws IOException {
-//        Assert.assertEquals(driver.getTitle(), "Uber Eats | Food Delivery and Takeout | Order Online from Restaurants Near You");
-//        TakeScreenshot(screenshotPath+"Homepage.png");
-//    }
 
     @Test (priority = 1)
     void CheckTitle() {
@@ -59,21 +53,29 @@ public class Setup {
         }
     }
 
-//    public WebDriver getDriver() // from: https://stackoverflow.com/questions/42331659/how-to-pass-selenium-webdriver-instance-to-another-class
-//    {
-//        if (driver == null){ //This null designation causes a problem on the CheckTitle method: java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.getTitle()" because "this.driver" is null
-//            driver = new ChromeDriver();
-//            return driver;
-//        }else{
-//            return driver;
-//        }
-//    }
+    void toggleFilterT(String Text)
+    {
+        driver.findElement(By.partialLinkText(Text)).click();
+        wait(1000);
+    }
 
-//    public void TakeScreenshot(String filepath) throws IOException
-//    {
-//        TakesScreenshot screenshot = (TakesScreenshot)driver;
-//        File src = screenshot.getScreenshotAs(OutputType.FILE);
-//        File des = new File(filepath);
-//        FileHandler.copy(src, des);
-//    }
+    void toggleFilterX(String XPath)
+    {
+        driver.findElement(By.xpath(XPath)).click();
+        wait(1000);
+    }
+
+
+    public void TakeScreenshot(String fileName)
+    {
+        String filepath = screenshotPath + fileName + ".png";
+        TakesScreenshot screenshot = (TakesScreenshot)driver;
+        File src = screenshot.getScreenshotAs(OutputType.FILE);
+        File des = new File(filepath);
+        try {
+            FileHandler.copy(src, des);
+        } catch (IOException e) {
+            Assert.fail("IO Exception in Screenshot");
+        }
+    }
 }
