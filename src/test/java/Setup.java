@@ -33,11 +33,11 @@ public class Setup {
         Assert.assertEquals(driver.getTitle(), "Order Food Online | Food Delivery App | Uber Eats");
     }
 
-    @AfterSuite
-    void CloseBrowser()
-    {
-        driver.quit();
-    }
+//    @AfterSuite
+//    void CloseBrowser()
+//    {
+//        driver.quit();
+//    }
 
 //    public WebDriver getDriver() // from: https://stackoverflow.com/questions/42331659/how-to-pass-selenium-webdriver-instance-to-another-class
 //    {
