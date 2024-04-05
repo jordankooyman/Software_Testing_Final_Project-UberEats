@@ -6,21 +6,21 @@ public class Scheduling extends Setup {
 
     // Select delivery options
     @Test (priority = 1)
-    public void selectDeliveryDetails() {
+    void selectDeliveryDetails() {
         WebElement deliveryDetails = driver.findElement(By.cssSelector("svg[aria-label='Deliver to']"));
         deliveryDetails.click();
         wait(2000);
     }
     // Choose to schedule a delivery
     @Test (priority = 2)
-    public void selectScheduleOptions() {
+    void selectScheduleOptions() {
         WebElement scheduleOptions = driver.findElement(By.cssSelector("a[data-testid='schedule-button']"));
         scheduleOptions.click();
         wait(2000);
     }
     // Select a date (tomorrow) and a time for delivery
     @Test (priority = 3)
-    public void clickDateSelector() {
+    void clickDateSelector() {
         // Locate and click the delivery time option
         WebElement scheduleForTomorrow = driver.findElement(By.xpath("//button[@data-testid='date-schedule-selector-button' and contains(., 'Tomorrow')]"));
         wait(2000);
@@ -37,7 +37,7 @@ public class Scheduling extends Setup {
     }
     // Switch from delivery tomorrow to today and "deliver now"
     @Test (priority = 3)
-    public void selectDeliverNow() {
+    void selectDeliverNow() {
         WebElement scheduleForToday = driver.findElement(By.xpath("//button[@data-testid='date-schedule-selector-button' and contains(., 'Today')]"));
         scheduleForToday.click();
         wait(2000);
