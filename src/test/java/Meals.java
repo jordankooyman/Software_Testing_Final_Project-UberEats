@@ -20,12 +20,13 @@ public class Meals extends Setup{
         wait(4000);
         driver.findElement(By.id("search-suggestions-typeahead-item-0")).click(); //Uses the search listing as opposed to the restaurant card
         Assert.assertEquals(driver.getTitle(), "Uber Eats | Food Delivery and Takeout | Order Online from Restaurants Near You");
-        wait(4000);
+        wait(5000);
     }
 
     @Test(priority = 2)
     void StandardMealSection() {
-        driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/div[2]/main/div[5]/div/div[2]/div[1]/div[2]/div/div/nav/div[3]/button")).click(); //Navigates to the premade bowls
+        //driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/div[2]/main/div[5]/div/div[2]/div[1]/div[2]/div/div/nav/div[3]/button")).click(); //Navigates to the premade bowls
+        driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/div[2]/main/div[4]/div/div[2]/div[1]/div[2]/div/div/nav/div[2]/button")).click();
         wait(2000);
         Assert.assertEquals(driver.getCurrentUrl(),"https://www.ubereats.com/store/chipotle-mexican-grill-10010-university-plaza-drive/gV8nhcqQThWJqxe97nKKQQ?diningMode=DELIVERY&sc=SEARCH_SUGGESTION"); //Checks to verify URL
         wait(4000);
@@ -36,7 +37,7 @@ public class Meals extends Setup{
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/div[2]/main/div[5]/div/div[3]/div/ul/li[3]/div/ul/li[3]/a/div/div[2]/div/button")).click(); //Selects premade bowl
         wait(4000);
         driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div/div/div/div[2]/div/div[2]/div[3]/div/button[1]")).click(); //Adds to cart
-        wait(2000);
+        wait(4000);
     }
 
     @Test(priority = 4)
