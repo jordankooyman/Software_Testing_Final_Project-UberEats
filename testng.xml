@@ -30,7 +30,6 @@
                     <include name="testTogglePickupMode"/>
                     <include name="testZoom"/>
                     <include name="selectRestaurantFromList"/>
-                    <include name="selectRestaurantFromList"/>
                 </methods>
             </class>
             <class name="Meals">

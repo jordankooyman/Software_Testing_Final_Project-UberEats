@@ -1,11 +1,15 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.awt.*;
+import java.awt.event.InputEvent;
 import java.util.List;
 
 public class NearbyPickup extends Setup {
@@ -34,14 +38,11 @@ public class NearbyPickup extends Setup {
     {
         switchToPickup();
         zoomIn();
-        wait(1000);
-        zoomIn();
         zoomIn();
         zoomIn();
 
         Assert.assertTrue(withinRange(attributeCount("//*[@id=\"view-default-view\"]/div[2]"),1, 40), "Incorrect Number of Restaurants shown around FGCU");
 
-        zoomOut();
         zoomOut();
         zoomOut();
         zoomOut();
@@ -71,17 +72,16 @@ public class NearbyPickup extends Setup {
         exitPickup();
     }
 
-    @Test (priority = 3)
+//    @Test (priority = 3)
     void selectRestaurantFromMap()
     {
-        // Extra toggle sequence to ensure the map will stay centered on FGCU (delivery location given)
+        // Extra toggle sequence to ensure the map will stay centered on FGCU (delivery location given) (for testing only)
         switchToPickup();
         zoomIn();
         exitPickup();
 
         switchToPickup();
 //        moveMap();
-        zoomIn();
         zoomIn();
         zoomIn();
 
@@ -186,6 +186,34 @@ public class NearbyPickup extends Setup {
 //        action.release();
 //
 //        otherChild.click();
+
+
+//        // Get the location of the WebElement within the browser window
+//        Point location = otherChild.getLocation();
+//
+//        // Get the size of the element
+//        Dimension size = otherChild.getSize();
+//
+//        // Calculate the center point of the element
+//        int centerX = (int) (location.getX() + size.getWidth() / 2);
+//        int centerY = (int) (location.getY() + size.getHeight() / 2);
+//
+//        // Get the browser's position on the screen
+//        Point browserPosition = driver.manage().window().getPosition();
+//
+//        // Calculate the absolute screen coordinates
+//        int screenX = browserPosition.getX() + centerX;
+//        int screenY = browserPosition.getY() + centerY;
+//
+//        try { // https://www.geeksforgeeks.org/automate-mouse-events-using-java-robot-class/
+//            Robot robot = new Robot();
+//            robot.mouseMove(screenX, screenY);
+//            robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+//            wait(5);
+//            robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+//        } catch (AWTException e) {
+//            Assert.fail("Robot Error");
+//        }
 
 
         wait(1000); // Wait for popup animation to complete and everything to load

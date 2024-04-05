@@ -1,6 +1,7 @@
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.openqa.selenium.io.FileHandler;
 import org.testng.annotations.Test;
@@ -36,11 +37,11 @@ public class Setup {
         Assert.assertEquals(driver.getTitle(), "Order Food Online | Food Delivery App | Uber Eats", "Initial Address not Loaded");
     }
 
-//    @AfterSuite
-//    void CloseBrowser()
-//    {
-//        driver.quit();
-//    }
+    @AfterSuite
+    void CloseBrowser()
+    {
+        driver.quit();
+    }
 
     void wait(int time) // Sleep function with error handling built in
     {
