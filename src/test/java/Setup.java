@@ -63,6 +63,12 @@ public class Setup {
         wait(1000);
     }
 
+    boolean withinRange(int Value, int LowBound, int HighBound)
+    {
+        System.out.println("The value checked is: " + Value);
+        return Value >= LowBound && Value <= HighBound;
+    }
+
 
     public void TakeScreenshot(String fileName)
     {

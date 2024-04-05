@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
+<suite name="Uber Eats System Test">
     <test verbose="2" preserve-order="true"
           name="C:/Users/Jacob/IdeaProjects/Software_Testing_Final_Project-UberEats/src/test/java">
         <classes>
@@ -27,11 +27,10 @@
             </class>
             <class name="NearbyPickup">
                 <methods>
-                    <include name="switchToPickup"/>
-                    <include name="zoomIn"/>
-                    <include name="selectRestaurant"/>
-                    <include name="zoomOut"/>
-                    <include name="exitPickup"/>
+                    <include name="testTogglePickupMode"/>
+                    <include name="testZoom"/>
+                    <include name="selectRestaurantFromList"/>
+                    <include name="selectRestaurantFromList"/>
                 </methods>
             </class>
             <class name="Meals">

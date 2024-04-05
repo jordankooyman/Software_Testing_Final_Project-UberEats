@@ -198,9 +198,7 @@ public class SearchFilters extends Setup {
 
         int FastFoodSearchCount = isolateNumber(FastFoodSearch);
 
-        System.out.println("The number of results found is: " + FastFoodSearchCount);
-
-        return FastFoodSearchCount >= LowerBoundResultCount && FastFoodSearchCount <= UpperBoundResultCount;
+        return withinRange(FastFoodSearchCount, LowerBoundResultCount, UpperBoundResultCount);
     }
 
     int isolateNumber(String input) {
