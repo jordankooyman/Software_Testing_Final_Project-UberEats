@@ -12,7 +12,7 @@ import java.util.List;
 
 public class Setup {
     public WebDriver driver;
-    public String screenshotPath = "C:\\Users\\jorda\\Desktop\\";
+    public String screenshotPath = "C:\\Users\\Jacob\\Pictures";
     @BeforeSuite
     void OpenBrowser()
     {
@@ -31,6 +31,8 @@ public class Setup {
         addressBox.sendKeys(Keys.ARROW_DOWN); // Select first entry in combobox shown
         addressBox.sendKeys(Keys.ENTER);
         wait(5000); // Let new webpage load
+        TakeScreenshot("Homepage"); //Takes screenshot
+        wait(5000);// Lets webpage load
     }
 
     @Test (priority = 1)
@@ -51,11 +53,11 @@ public class Setup {
     }
 
 
-    @AfterSuite
-    void CloseBrowser()
-    {
-        driver.quit();
-    }
+//    @AfterSuite
+//    void CloseBrowser()
+//    {
+//        driver.quit();
+//    }
 
     void wait(int time) // Sleep function with error handling built in
     {
