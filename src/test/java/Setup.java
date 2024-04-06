@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 import org.openqa.selenium.Keys;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 public class Setup {
     public WebDriver driver;
@@ -36,6 +37,19 @@ public class Setup {
     void CheckTitle() {
         Assert.assertEquals(driver.getTitle(), "Order Food Online | Food Delivery App | Uber Eats", "Initial Address not Loaded");
     }
+
+    @Test (priority = 2)
+    void CheckUrl(){
+        Assert.assertEquals(driver.getCurrentUrl(), "https://www.ubereats.com/feed?diningMode=DELIVERY&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMkZsb3JpZGElMjBHdWxmJTIwQ29hc3QlMjBVbml2ZXJzaXR5JTIyJTJDJTIycmVmZXJlbmNlJTIyJTNBJTIyaGVyZSUzQXBkcyUzQXBsYWNlJTNBODQwZGh0eWUtZTQ0NWUzZmM4ZDc2NGJjOGE0MTZhNGYyN2FhMmRiNWMlMjIlMkMlMjJyZWZlcmVuY2VUeXBlJTIyJTNBJTIyaGVyZV9wbGFjZXMlMjIlMkMlMjJsYXRpdHVkZSUyMiUzQTI2LjQ2MzY0JTJDJTIybG9uZ2l0dWRlJTIyJTNBLTgxLjc3MjU1JTdE");
+    }
+
+    @Test (priority = 3)
+    void CheckSizeOfElements(){
+        List<WebElement> link=driver.findElements(By.tagName("a"));
+        wait(3000);
+        Assert.assertEquals(link.size(),link.size());
+    }
+
 
 //    @AfterSuite
 //    void CloseBrowser()

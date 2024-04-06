@@ -3,6 +3,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -71,6 +74,18 @@ public class Meals extends Setup {
         driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div/div/div/div[2]/div/div[2]/ul/li[7]/div/div[2]/div[7]/div[1]/button")).click(); //Blackberry Izze
         wait(3000);
         driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div/div/div/div[2]/div/div[2]/div[3]/div/button[1]")).click(); //adds to cart
+        wait(3000);
+    }
+    @Test(priority = 5)
+    void RemoveStandardMeal(){
+        WebElement reopenCart = driver.findElement(By.cssSelector("button[aria-label='checkout']"));
+        wait(2000);
+        reopenCart.click();
+        WebElement standardMealQuantity = driver.findElement(By.cssSelector("li[data-test='cart-item-fcb9ce04-1a4d-5a02-a945-9e5e943917a5'] select"));
+        wait(2000);
+        Select dropdown = new Select(standardMealQuantity);
+        wait(2000);
+        dropdown.selectByValue("0");
         wait(3000);
     }
 }

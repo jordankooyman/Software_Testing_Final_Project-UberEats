@@ -36,7 +36,7 @@ public class Scheduling extends Setup {
 //        wait(3000);
     }
     // Switch from delivery tomorrow to today and "deliver now"
-    @Test (priority = 3)
+    @Test (priority = 4) //switched from 3 to 4 just in case that's what you meant
     void selectDeliverNow() {
         WebElement scheduleForToday = driver.findElement(By.xpath("//button[@data-testid='date-schedule-selector-button' and contains(., 'Today')]"));
         scheduleForToday.click();
