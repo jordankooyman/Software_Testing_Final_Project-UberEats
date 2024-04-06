@@ -7,6 +7,8 @@
             <class name="Setup">
                 <methods>
                     <include name="CheckTitle"/>
+                    <include name="CheckUrl"/>
+                    <include name="CheckSizeOfElements"
                 </methods>
             </class>
             <class name="DeliveryAddress">
@@ -54,6 +56,15 @@
                     <include name="selectScheduleOptions"/>
                     <include name="clickDateSelector"/>
                     <include name="selectDeliverNow"/>
+                </methods>
+            </class>
+            <class name="Groceries">
+                <methods>
+                    <include name="NavigateToGroceries"/>
+                    <include name="FilterGroceryType"/>
+                    <include name="SelectGroceryStore"/>
+                    <include name="ShopByList"/>
+                    <include name="AddListItemsToCart"/>
                 </methods>
             </class>
         </classes>

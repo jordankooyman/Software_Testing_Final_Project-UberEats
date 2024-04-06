@@ -47,7 +47,7 @@ public class Meals extends Setup {
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/div[2]/main/div[4]/div/div[2]/div[1]/div[2]/div/div/nav/div[3]/button")).click(); //Navigates to custom items
         wait(3000);
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,-600)", ""); //Scrolls up by 200 pixels
+        js.executeScript("window.scrollBy(0,-600)", ""); //Scrolls up by 600 pixels
         wait(3000);
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/div[2]/main/div[4]/div/div[3]/div/ul/li[2]/div/ul/li[1]/a/div/div[2]/div/button")).click(); //selects custom bowl
         wait(3000);
