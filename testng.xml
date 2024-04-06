@@ -40,6 +40,22 @@
                     <include name="OrderCustomMeal"/>
                 </methods>
             </class>
+            <class name="Beverages">
+                <methods>
+                    <include name="navigateToRestaurant"/>
+                    <include name="viewBeverages"/>
+                    <include name="addMultiBeverages"/>
+                    <include name="editCart"/>
+                </methods>
+            </class>
+            <class name="Scheduling">
+                <methods>
+                    <include name="selectDeliveryDetails"/>
+                    <include name="selectScheduleOptions"/>
+                    <include name="clickDateSelector"/>
+                    <include name="selectDeliverNow"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
