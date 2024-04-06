@@ -38,6 +38,4 @@ public class Groceries extends Setup{
         driver.findElement(By.xpath("//*[@id=\"main-content\"]/div/div[1]/div/div/div[3]/div[1]/div/a/h3")).click(); //Selects WAWA
         Assert.assertEquals(driver.getCurrentUrl(),"https://www.ubereats.com/store/wawa-5237-16971-aaron-warnek-pl/9ImCpSA0UhShMAm-_jLylA?diningMode=DELIVERY");
     }
-
-    @Test
 }

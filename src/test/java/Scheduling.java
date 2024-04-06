@@ -27,7 +27,7 @@ public class Scheduling extends Setup {
         wait(2000);
         scheduleForTomorrow.click();
         wait(4000);
-        WebElement timeSlot = driver.findElement(By.xpath("//label[.//span[text()='1:30 PM - 2:00 PM']]"));
+        WebElement timeSlot = driver.findElement(By.xpath("//label[.//span[text()='5:30 PM - 6:00 PM']]"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", timeSlot);
         wait(3000);
     }
