@@ -52,18 +52,19 @@ public class DeliveryAddress extends Setup {
     }
 
     void setAddress(String newAddress) {
+        wait(3000);
         openAddressDialog();
 
         driver.findElement(By.partialLinkText("hange")).click(); // Look for "Change" or "click.change" button text
 
         // Wait for the dialog box to update
-        wait(250);
+        wait(3000);
 
         driver.findElement(By.id("location-typeahead-location-manager-input")).sendKeys(newAddress);
-        wait(1000); // Wait for search to complete
+        wait(2000); // Wait for search to complete
         driver.findElement(By.id("location-typeahead-location-manager-input")).sendKeys(Keys.ARROW_DOWN);
         driver.findElement(By.id("location-typeahead-location-manager-input")).sendKeys(Keys.ENTER); // Closes Dialog as well
-        wait(1000);
+        wait(3000);
 
         // closeAddressDialog();
     }

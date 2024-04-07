@@ -2,6 +2,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.openqa.selenium.io.FileHandler;
 import org.testng.annotations.Test;
@@ -13,7 +14,7 @@ import java.util.List;
 public class Setup {
     public WebDriver driver;
     public String screenshotPath = "C:\\Users\\Jacob\\Pictures";
-    @BeforeSuite
+    @BeforeClass
     void OpenBrowser()
     {
         driver = new ChromeDriver();

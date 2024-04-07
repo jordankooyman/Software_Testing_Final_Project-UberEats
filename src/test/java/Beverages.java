@@ -13,7 +13,7 @@ public class Beverages extends Setup {
         driver.findElement(By.id("search-suggestions-typeahead-input")).click();
         wait(2000);
         driver.findElement(By.id("search-suggestions-typeahead-item-0")).click();
-        wait(2000);
+        wait(4000);
     }
 
     private void addButton(int numberOfClicks) {
@@ -25,16 +25,15 @@ public class Beverages extends Setup {
         }
     }
 
-    @Test(priority = 1)
+    @Test(priority = 2)
     // find "beverages" tab on restaurant page
     void viewBeverages() {
-        wait(2000);
         WebElement beveragesButton = driver.findElement(By.xpath("//button[.//div[text()='Beverages']]"));
         beveragesButton.click();
-        wait(2000);
+        wait(4000);
     }
 
-    @Test(priority = 2)
+    @Test(priority = 3)
     // adds different beverages to cart in different amounts
     void addMultiBeverages() {
         // Add lemonade
@@ -54,9 +53,9 @@ public class Beverages extends Setup {
         waterAddButton.click();
         wait(1000);
         addButton(3);
-        wait(2000);
+        wait(4000);
     }
-        @Test(priority = 3)
+        @Test(priority = 4)
         void editCart () {
         // views cart and edits quantity of kombucha from 3 to 2
             WebElement checkoutButton = driver.findElement(By.cssSelector("button[aria-label='checkout']"));
