@@ -65,7 +65,7 @@
                     <include name="SelectGroceryStore"/>
                     <include name="ShopByList"/>
                     <include name="AddListItemsToCart"/>
-                    <include name="DeleteShoppingList"
+                    <include name="DeleteShoppingList"/>
                 </methods>
             </class>
         </classes>

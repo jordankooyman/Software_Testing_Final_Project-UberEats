@@ -53,11 +53,11 @@ public class Setup {
     }
 
 
-//    @AfterSuite
-//    void CloseBrowser()
-//    {
-//        driver.quit();
-//    }
+    @AfterSuite
+    void CloseBrowser()
+    {
+        driver.quit();
+    }
 
     void wait(int time) // Sleep function with error handling built in
     {
