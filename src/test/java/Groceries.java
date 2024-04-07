@@ -43,22 +43,23 @@ public class Groceries extends Setup{
         wait(4000);
         driver.findElement(By.id("search-suggestions-typeahead-item-0")).click(); //Uses the search listing as opposed to the restaurant card
         Assert.assertEquals(driver.getCurrentUrl(),"https://www.ubereats.com/store/wawa-5237-16971-aaron-warnek-pl/9ImCpSA0UhShMAm-_jLylA?sc=SEARCH_SUGGESTION");
+        wait(4000);
     }
 
     @Test(priority = 4)
     void ShopByList(){
-        driver.findElement(By.xpath("//a[contains(@href, '#SHOP_YOUR_LIST')]")).click(); // opens and selects grocery list
+        driver.findElement(By.xpath("//*[@id=\"main-content\"]/div[3]/div/div[1]/div[3]/div[1]/nav/ul/li[2]/a/div")).click(); // opens and selects grocery list
         wait(4000);
-        driver.findElement(By.xpath("//div[contains(@data-baseweb, 'textarea')]")).sendKeys("Slim Jim"); //Adds Slim Jim to list
-        driver.findElement(By.xpath("//div[contains(@data-baseweb, 'textarea')]")).sendKeys(Keys.ENTER);
+        driver.findElement(By.xpath("//textarea[@type='textarea']")).sendKeys("Slim Jim"); //Adds Slim Jim to list
+        driver.findElement(By.xpath("//textarea[@type='textarea']")).sendKeys(Keys.ENTER);
         wait(3000);
-        driver.findElement(By.xpath("//div[contains(@data-baseweb, 'textarea')]")).sendKeys("Lay's Classic"); //Adds Classic Lays to list
-        driver.findElement(By.xpath("//div[contains(@data-baseweb, 'textarea')]")).sendKeys(Keys.ENTER);
+        driver.findElement(By.xpath("//textarea[@type='textarea']")).sendKeys("Lay's Classic"); //Adds Classic Lays to list
+        driver.findElement(By.xpath("//textarea[@type='textarea']")).sendKeys(Keys.ENTER);
         wait(3000);
-        driver.findElement(By.xpath("//div[contains(@data-baseweb, 'textarea')]")).sendKeys("Swedish Fish"); //Adds Swedish Fish to list
-        driver.findElement(By.xpath("//div[contains(@data-baseweb, 'textarea')]")).sendKeys(Keys.ENTER);
+        driver.findElement(By.xpath("//textarea[@type='textarea']")).sendKeys("Swedish Fish"); //Adds Swedish Fish to list
+        driver.findElement(By.xpath("//textarea[@type='textarea']")).sendKeys(Keys.ENTER);
         wait(3000);
-        driver.findElement(By.xpath("//div[contains(@data-baseweb, 'textarea')]")).click(); //Submits list to shop
+        driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/div/div[2]/div/div/div/div[6]/button")).click(); //Submits list to shop
         wait(4000);
     }
 
@@ -87,6 +88,7 @@ public class Groceries extends Setup{
         wait(3000);
         driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/div/div[2]/div/div/div/div[3]/div/div[2]/div/div/textarea")).sendKeys(Keys.DELETE); //deletes the list
         wait(3000);
+        driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/div/div[2]/div/div/div/div[1]/div/div[2]/div[1]/button")).click(); //closes the list
     }
 }
 
