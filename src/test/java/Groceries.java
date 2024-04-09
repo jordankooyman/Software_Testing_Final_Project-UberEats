@@ -53,10 +53,10 @@ public class Groceries extends Setup{
         driver.findElement(By.xpath("//textarea[@type='textarea']")).sendKeys("Slim Jim"); //Adds Slim Jim to list
         driver.findElement(By.xpath("//textarea[@type='textarea']")).sendKeys(Keys.ENTER);
         wait(3000);
-        driver.findElement(By.xpath("//textarea[@type='textarea']")).sendKeys("Lay's Classic"); //Adds Classic Lays to list
+        driver.findElement(By.xpath("//textarea[@type='textarea']")).sendKeys("Swedish Fish"); //Adds Swedish Fish to list
         driver.findElement(By.xpath("//textarea[@type='textarea']")).sendKeys(Keys.ENTER);
         wait(3000);
-        driver.findElement(By.xpath("//textarea[@type='textarea']")).sendKeys("Swedish Fish"); //Adds Swedish Fish to list
+        driver.findElement(By.xpath("//textarea[@type='textarea']")).sendKeys("Lays"); //Adds Classic Lays to list
         driver.findElement(By.xpath("//textarea[@type='textarea']")).sendKeys(Keys.ENTER);
         wait(3000);
         driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/div/div[2]/div/div/div/div[6]/button")).click(); //Submits list to shop
@@ -67,12 +67,12 @@ public class Groceries extends Setup{
     void AddListItemsToCart(){
         driver.findElement(By.xpath("//*[@id=\"main-content\"]/div[3]/div/div[2]/div/div/div/div[2]/ul/li[1]/div/div/div[2]/ul/ul/li[1]/a/div/div[1]/div[3]/div/button")).click(); //Adds slim jim to cart
         wait(3000);
-        driver.findElement(By.xpath("//*[@id=\"main-content\"]/div[3]/div/div[2]/div/div/div/div[2]/ul/li[2]/div/div/div[2]/ul[1]/ul/li[1]/a/div/div[1]/div[3]/div/button")).click(); //Adds Lays to cart
+        driver.findElement(By.xpath("//*[@id=\"main-content\"]/div[3]/div/div[2]/div/div/div/div[2]/ul/li[2]/div/div/div[2]/ul/ul/li[2]/a/div/div[1]/div[3]/div/button")).click(); //Adds swedish fish to cart
         wait(3000);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,600)", ""); //Scrolls down by 600 pixels
         wait(3000);
-        driver.findElement(By.xpath("//*[@id=\"main-content\"]/div[3]/div/div[2]/div/div/div/div[2]/ul/li[3]/div/div/div[2]/ul/ul/li[1]/a/div/div[1]/div[3]/div/button")).click(); //Adds swedish fish to cart
+        driver.findElement(By.xpath("//*[@id=\"main-content\"]/div[3]/div/div[2]/div/div/div/div[2]/ul/li[3]/div/div/div[2]/ul[1]/ul/li[1]/a/div/div[1]/div[3]/div/button")).click(); //Adds Lays to cart
         wait(3000);
     }
 

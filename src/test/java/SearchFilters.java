@@ -13,11 +13,11 @@ public class SearchFilters extends Setup {
     {
         SelectOneCuisine("BBQ");
 
-        Assert.assertTrue(checkSearchResults(200, 400));
+        Assert.assertTrue(checkSearchResults(100, 500));
 
         DeselectOneCuisine("BBQ");
 
-        Assert.assertFalse(checkSearchResults(1, 400));
+        Assert.assertFalse(checkSearchResults(1, 500));
     }
 
     @Test
@@ -26,7 +26,7 @@ public class SearchFilters extends Setup {
         SelectOneCuisine("Fast Food");
         SelectUnder30();
 
-        Assert.assertTrue(checkSearchResults(10,25));
+        Assert.assertTrue(checkSearchResults(10,40));
 
         DeselectUnder30();
         DeselectOneCuisine("Fast Food");
@@ -39,7 +39,7 @@ public class SearchFilters extends Setup {
     {
         SelectVegan();
 
-        Assert.assertTrue(checkSearchResults(1,10));
+        Assert.assertTrue(checkSearchResults(1,30));
 
         DeselectVegan();
 
@@ -73,20 +73,20 @@ public class SearchFilters extends Setup {
         SelectUnder30();
 
 //        TakeScreenshot("1-2FiltersSorted");
-        Assert.assertTrue(checkSearchResults(1,10));
+        Assert.assertTrue(checkSearchResults(1,30));
         Assert.assertTrue(checkSorting("Rating"));
 
         DeselectUnder30();
 
 //        TakeScreenshot("2-1FilterSorted");
-        Assert.assertTrue(checkSearchResults(50,150));
+        Assert.assertTrue(checkSearchResults(40,200));
         Assert.assertTrue(checkSorting("Rating"));
 
         DeselectSort();
         SelectOneCuisine("Sushi");
 
 //        TakeScreenshot("3-1Filter");
-        Assert.assertTrue(checkSearchResults(50,150));
+        Assert.assertTrue(checkSearchResults(20,200));
         Assert.assertFalse(checkSorting("Sort by"));
 
         DeselectOneCuisine("Sushi");

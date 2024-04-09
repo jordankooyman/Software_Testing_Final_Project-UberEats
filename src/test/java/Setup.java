@@ -1,11 +1,8 @@
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.*;
 import org.openqa.selenium.io.FileHandler;
-import org.testng.annotations.Test;
 import org.openqa.selenium.Keys;
 import java.io.File;
 import java.io.IOException;
@@ -54,7 +51,7 @@ public class Setup {
     }
 
 
-    @AfterSuite
+    @AfterClass
     void CloseBrowser()
     {
         driver.quit();
