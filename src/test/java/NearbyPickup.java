@@ -87,6 +87,8 @@ public class NearbyPickup extends Setup {
 
         clickMapPin("Insomnia Cookie");
 
+        wait(2000);
+
         Assert.assertEquals(driver.getTitle(), "Order Insomnia Cookies (Fort Myers) Menu Delivery【Menu & Prices】| Fort Myers-Naples | Uber Eats");
 
         clickXPath("//*[@id=\"wrapper\"]/header/div/div/div/div/div/div[1]/a/img"); // Back to Main page
